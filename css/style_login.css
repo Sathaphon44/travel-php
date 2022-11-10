@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@600&display=swap');
+
+
+*{
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+#content_main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    width: 30%;
+    
+}
+
+#admin {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#btn {
+    display: flex;
+    justify-content: center;
+}
+
+#btn-login, #btn-cancel{
+    width: 100px;
+    padding: 2px;
+}

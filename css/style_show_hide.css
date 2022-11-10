@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@600&display=swap');
+
+*{
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+body{
+    height: 100vh;
+}
+
+#text-center {
+    color:rgb(204, 204, 204);
+}
+
+#center-text {
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
