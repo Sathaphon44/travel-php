@@ -4,7 +4,7 @@
       header('location: ../login.php');
     }
 
-    include '../db/connect.php';
+    require_once __DIR__ . '/../db/connect.php';
     
     // ดึงข้อมูลเพื่อจะได้รู้ว่ามีข้อมูลทั้งหมดเท่าไร
     $sql = "SELECT * FROM content WHERE hide = '0'";

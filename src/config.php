@@ -1,9 +1,7 @@
 <?php
-    require 'vendor/autoload.php'; // Use an absolute path
-    use Dotenv\Dotenv;
+    require_once __DIR__ . '/../vendor/autoload.php'; // Adjust path as necessary
 
-    // Load the .env file
-    $dotenv = Dotenv::createImmutable(__DIR__);
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../"); // Adjust path as necessary
     $dotenv->load();
 
     $host = $_ENV["DB_HOST"];
