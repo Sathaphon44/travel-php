@@ -7,7 +7,7 @@
     require_once __DIR__ . '/../db/connect.php';
     
     // ดึงข้อมูลเพื่อจะได้รู้ว่ามีข้อมูลทั้งหมดเท่าไร
-    $sql = "SELECT * FROM content WHERE hide = '0'";
+    $sql = "SELECT * FROM content WHERE hide = '0' ORDER BY id DESC";
     $database = $conn->query($sql);
 
     if(isset($_GET['logout'])){
@@ -49,18 +49,19 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Image</th>
-              <th scope="col">Edit</th>
+              <th scope="col">ลำดับ</th>
+              <th scope="col">ชื่อ</th>
+              <th scope="col">รูปภาพ</th>
+              <th scope="col">จัดการ</th>
             </tr>
           </thead>
           <tbody>
             <?php
+              $number = 1;
               while($row = $database->fetch_assoc()) {
             ?>
               <tr>
-              <th scope="row"> <?php echo $row["id"]; ?> </th>
+                <th scope="row"> <?php echo $number; ?> </th>
                 <td><?php echo $row["name"];?></td>
                 <td><?php echo $row['image'];?></td>
                 <td> 
@@ -74,6 +75,7 @@
                 </td>
               </tr>
             <?php
+              $number++;
               }
               ?>
             </tbody>

@@ -6,7 +6,7 @@
     }
     include '../db/connect.php';
     // ดึงข้อมูลเพื่อจะได้รู้ว่ามีข้อมูลทั้งหมดเท่าไร
-    $sql = "SELECT * FROM content WHERE hide = '1'";
+    $sql = "SELECT * FROM content WHERE hide = '1' ORDER BY id DESC";
     $database = $conn->query($sql);
 
     if(empty($_GET['id'])){
@@ -50,23 +50,29 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Edit</th>
+                            <th scope="col">ลำดับ</th>
+                            <th scope="col">ชื่อ</th>
+                            <th scope="col">รูปภาพ</th>
+                            <th scope="col">จัดการ</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while($row = $database->fetch_assoc()) { ?>
+                        <?php 
+                            $number = 1;
+                            while($row = $database->fetch_assoc()) { 
+                        ?>
                             <tr>
-                                <th scope="row"> <?php echo $row["id"]; ?> </th>
+                                <th scope="row"> <?php echo $number; ?> </th>
                                 <td> <?php echo $row["name"]; ?> </td>
                                 <td> <?php echo $row['image']; ?> </td>
                                 <td class="row"> 
                                     <a id="btn-hide" class="col btn btn-danger p-1 m-1" href="show_hide.php?id=<?php echo $row['id'];?>&hide=<?php echo $row['hide'];?>"> แสดง </a>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php 
+                            $number ++;
+                        } 
+                    ?>
                     </tbody>
                 </table>
             <?php }else {?>
