@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style_index.css">
-    <link rel="icon" type="images/png" href="airplane.png">
+    <link rel="icon" type="images/png" href="images/airplane.png">
     <title>สถานที่ท่องเที่ยวที่แนะนำ</title>
 </head>
 <body>
@@ -79,9 +79,7 @@
         <div id='footer-content' class="container">
             <h5>จัดทำโดย</h5>
             <p>
-                1. กนกอร อัศวเชษฐ รหัส 6311503939 <br>
-                2. นาย ศศินนท์ ชาญสมร รหัส 6311503970 <br>
-                3. นาย สถาพร คงโนนกอก รหัส 6311504507
+                1. นาย สถาพร คงโนนกอก
             </p>
         </div>
     </footer>

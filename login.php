@@ -16,8 +16,11 @@
         }
         if ($adminUserErr == "" and $passwordErr == "") {
             include 'db/connect.php';
-            $sql = "SELECT * FROM admin WHERE admin_name='$admin' and admin_password = '$pass'";
-            $database = $conn->query($sql);
+            $sql = "SELECT * FROM admin WHERE admin_name=? and admin_password = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $admin, $pass);
+            $stmt->execute();
+            $database = $stmt->get_result();
             if ($database->num_rows > 0) {
                 // output data of each row
                 while($row = $database->fetch_assoc()) {
